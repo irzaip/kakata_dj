@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from webapi import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^', include('auth0login.urls'))
+    url(r'^', include('auth0login.urls')),
+    url(r'^webapi/public', views.public),
+    url(r'^webapi/private', views.private)
 ]
